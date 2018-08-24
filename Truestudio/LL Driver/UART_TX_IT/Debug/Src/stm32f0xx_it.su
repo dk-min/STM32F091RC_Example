@@ -1,3 +1,0 @@
-stm32f0xx_it.c:47:14:USART_Rx_Callback	0	static
-stm32f0xx_it.c:54:6:SysTick_Handler	0	static
-stm32f0xx_it.c:75:6:USART2_IRQHandler	8	static
