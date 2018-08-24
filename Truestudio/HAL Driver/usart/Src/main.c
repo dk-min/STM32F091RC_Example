@@ -73,7 +73,6 @@ static void MX_USART2_UART_Init(void);
   */
 int main(void)
 {
-	uint8_t data;
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -106,15 +105,7 @@ int main(void)
   while (1)
   {
   /* USER CODE END WHILE */
-	  /*
-	  HAL_UART_Receive(&huart2, &data, sizeof(data), 10);
-	  if(data == 'a'){
-
-		  HAL_UART_Transmit(&huart2, "¾Ó±â¸ð¶ì\r\n", sizeof("¾Ó±â¸ð¶ì\r\n"), 10);
-		  data = 0;
-	  }
-	  */
-	  HAL_UART_Transmit(&huart2, "¾Ó±â¸ð¶ì\r\n", sizeof("¾Ó±â¸ð¶ì\r\n"), 10);
+	  HAL_UART_Transmit(&huart2, "Hello World! \r\n", sizeof("Hello World! \r\n"), 10);
 	  HAL_Delay(1000);
   /* USER CODE BEGIN 3 */
 

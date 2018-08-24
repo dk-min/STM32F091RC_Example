@@ -7,37 +7,37 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000013c4  080000bc  080000bc  000100bc  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000048  08001480  08001480  00011480  2**0
+  2 .rodata       0000004c  08001480  08001480  00011480  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .init_array   00000004  080014c8  080014c8  000114c8  2**2
+  3 .init_array   00000004  080014cc  080014cc  000114cc  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  4 .fini_array   00000004  080014cc  080014cc  000114cc  2**2
+  4 .fini_array   00000004  080014d0  080014d0  000114d0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  5 .data         00000004  20000000  080014d0  00020000  2**2
+  5 .data         00000004  20000000  080014d4  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .bss          00000090  20000004  080014d4  00020004  2**2
+  6 .bss          00000090  20000004  080014d8  00020004  2**2
                   ALLOC
-  7 ._user_heap_stack 00000600  20000094  080014d4  00020094  2**0
+  7 ._user_heap_stack 00000600  20000094  080014d8  00020094  2**0
                   ALLOC
   8 .ARM.attributes 00000028  00000000  00000000  00020004  2**0
                   CONTENTS, READONLY
-  9 .debug_info   0000ab13  00000000  00000000  0002002c  2**0
+  9 .debug_info   0000ab0c  00000000  00000000  0002002c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 000019a8  00000000  00000000  0002ab3f  2**0
+ 10 .debug_abbrev 000019a8  00000000  00000000  0002ab38  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_loc    000025e6  00000000  00000000  0002c4e7  2**0
+ 11 .debug_loc    000025e6  00000000  00000000  0002c4e0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_aranges 000004c0  00000000  00000000  0002ead0  2**3
+ 12 .debug_aranges 000004c0  00000000  00000000  0002eac8  2**3
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000640  00000000  00000000  0002ef90  2**3
+ 13 .debug_ranges 00000640  00000000  00000000  0002ef88  2**3
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_line   000031b8  00000000  00000000  0002f5d0  2**0
+ 14 .debug_line   000031b6  00000000  00000000  0002f5c8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_str    00001f9d  00000000  00000000  00032788  2**0
+ 15 .debug_str    00001fa1  00000000  00000000  0003277e  2**0
                   CONTENTS, READONLY, DEBUGGING
- 16 .comment      0000007c  00000000  00000000  00034725  2**0
+ 16 .comment      0000007c  00000000  00000000  0003471f  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  00000c18  00000000  00000000  000347a4  2**2
+ 17 .debug_frame  00000c18  00000000  00000000  0003479c  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -1880,7 +1880,7 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  8000b22:	e777      	b.n	8000a14 <HAL_RCC_ClockConfig+0x34>
  8000b24:	40022000 	.word	0x40022000
  8000b28:	40021000 	.word	0x40021000
- 8000b2c:	080014af 	.word	0x080014af
+ 8000b2c:	080014b4 	.word	0x080014b4
  8000b30:	20000000 	.word	0x20000000
  8000b34:	00001388 	.word	0x00001388
  8000b38:	fffff8ff 	.word	0xfffff8ff
@@ -1918,7 +1918,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
 }    
  8000b5a:	4770      	bx	lr
  8000b5c:	40021000 	.word	0x40021000
- 8000b60:	080014bf 	.word	0x080014bf
+ 8000b60:	080014c4 	.word	0x080014c4
  8000b64:	20000000 	.word	0x20000000
 
 08000b68 <HAL_RCCEx_PeriphCLKConfig>:
@@ -3292,9 +3292,9 @@ HAL_StatusTypeDef UART_WaitOnFlagUntilTimeout(UART_HandleTypeDef *huart, uint32_
 	  HAL_Delay(1000);
  8001280:	25fa      	movs	r5, #250	; 0xfa
  8001282:	00ad      	lsls	r5, r5, #2
-	  HAL_UART_Transmit(&huart2, "¾Ó±â¸ð¶ì\r\n", sizeof("¾Ó±â¸ð¶ì\r\n"), 10);
+	  HAL_UART_Transmit(&huart2, "Hello World! \r\n", sizeof("Hello World! \r\n"), 10);
  8001284:	230a      	movs	r3, #10
- 8001286:	220b      	movs	r2, #11
+ 8001286:	2210      	movs	r2, #16
  8001288:	4909      	ldr	r1, [pc, #36]	; (80012b0 <main+0xd4>)
  800128a:	0020      	movs	r0, r4
  800128c:	f7ff fe8a 	bl	8000fa4 <HAL_UART_Transmit>
@@ -3655,7 +3655,7 @@ LoopForever:
   ldr r1, =_edata
  80013f8:	20000004 	.word	0x20000004
   ldr r2, =_sidata
- 80013fc:	080014d0 	.word	0x080014d0
+ 80013fc:	080014d4 	.word	0x080014d4
   ldr r2, =_sbss
  8001400:	20000004 	.word	0x20000004
   ldr r4, =_ebss
@@ -3699,10 +3699,10 @@ Infinite_Loop:
  800143e:	4798      	blx	r3
  8001440:	3601      	adds	r6, #1
  8001442:	e7f2      	b.n	800142a <__libc_init_array+0x1e>
- 8001444:	080014c8 	.word	0x080014c8
- 8001448:	080014c8 	.word	0x080014c8
- 800144c:	080014c8 	.word	0x080014c8
- 8001450:	080014cc 	.word	0x080014cc
+ 8001444:	080014cc 	.word	0x080014cc
+ 8001448:	080014cc 	.word	0x080014cc
+ 800144c:	080014cc 	.word	0x080014cc
+ 8001450:	080014d0 	.word	0x080014d0
 
 08001454 <memcpy>:
  8001454:	2300      	movs	r3, #0
