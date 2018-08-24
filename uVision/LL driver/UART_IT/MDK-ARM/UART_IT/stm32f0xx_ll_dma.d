@@ -1,0 +1,11 @@
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_dma.c
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_dma.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f091xc.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/CMSIS/Include/core_cm0.h
+uart_it\stm32f0xx_ll_dma.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/CMSIS/Include/core_cmInstr.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h
+uart_it\stm32f0xx_ll_dma.o: ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_bus.h

@@ -1,0 +1,16 @@
+--cpu Cortex-M0
+"exti\startup_stm32f091xc.o"
+"exti\main.o"
+"exti\stm32f0xx_it.o"
+"exti\stm32f0xx_ll_gpio.o"
+"exti\stm32f0xx_ll_exti.o"
+"exti\stm32f0xx_ll_pwr.o"
+"exti\stm32f0xx_ll_usart.o"
+"exti\stm32f0xx_ll_rcc.o"
+"exti\stm32f0xx_ll_dma.o"
+"exti\stm32f0xx_ll_utils.o"
+"exti\system_stm32f0xx.o"
+--library_type=microlib --strict --scatter "EXTI\EXTI.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "EXTI.map" -o EXTI\EXTI.axf

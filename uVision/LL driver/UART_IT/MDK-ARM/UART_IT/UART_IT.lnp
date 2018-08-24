@@ -1,0 +1,16 @@
+--cpu Cortex-M0
+"uart_it\startup_stm32f091xc.o"
+"uart_it\main.o"
+"uart_it\stm32f0xx_it.o"
+"uart_it\stm32f0xx_ll_gpio.o"
+"uart_it\stm32f0xx_ll_exti.o"
+"uart_it\stm32f0xx_ll_pwr.o"
+"uart_it\stm32f0xx_ll_usart.o"
+"uart_it\stm32f0xx_ll_rcc.o"
+"uart_it\stm32f0xx_ll_dma.o"
+"uart_it\stm32f0xx_ll_utils.o"
+"uart_it\system_stm32f0xx.o"
+--library_type=microlib --strict --scatter "UART_IT\UART_IT.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "UART_IT.map" -o UART_IT\UART_IT.axf

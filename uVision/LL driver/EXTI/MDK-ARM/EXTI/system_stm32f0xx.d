@@ -1,0 +1,9 @@
+exti\system_stm32f0xx.o: ..//Src/system_stm32f0xx.c
+exti\system_stm32f0xx.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
+exti\system_stm32f0xx.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f091xc.h
+exti\system_stm32f0xx.o: ../Drivers/CMSIS/Include/core_cm0.h
+exti\system_stm32f0xx.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+exti\system_stm32f0xx.o: ../Drivers/CMSIS/Include/core_cmInstr.h
+exti\system_stm32f0xx.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+exti\system_stm32f0xx.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+exti\system_stm32f0xx.o: ../Drivers/CMSIS/Device/ST/STM32F0xx/Include/system_stm32f0xx.h
